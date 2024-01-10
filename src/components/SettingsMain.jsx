@@ -5,7 +5,7 @@ import logo from "../assets/netflix_logo.png";
 
 const SettingsMain = () => {
   return (
-    <main>
+    <main id="settings">
       <Container>
         <Row className="justify-content-center">
           <Col xs={12} md={10} lg={8}>

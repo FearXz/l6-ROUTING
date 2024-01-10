@@ -36,7 +36,7 @@ function MovieDetail() {
   return (
     <>
       {movie ? (
-        <Container className=" text-white">
+        <Container className=" text-white pb-5 mb-5">
           <Row>
             <Col className="d-flex justify-content-center">
               <h1>

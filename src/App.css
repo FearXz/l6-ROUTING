@@ -2,6 +2,9 @@
 body {
   background-color: #141414;
 }
+body:has(main#settings) {
+  background-color: #f3f3f3;
+}
 .logo {
   width: 100px;
 }
