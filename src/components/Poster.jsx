@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function Poster(props) {
   return (
     <Col className={props.responsive}>
-      <Link to={`/`}>
-        <img src={props.poster} className=" img-fluid" alt="Media0" />
+      <Link to={`/moviedetail/${props.poster.imdbID}`}>
+        <img src={props.poster.Poster} className=" img-fluid" alt="Media0" />
       </Link>
     </Col>
   );

@@ -92,7 +92,7 @@ const Gallery = ({ movieList, id, title }) => {
                 <Poster
                   key={"poster-" + arrayIndex + "-" + index}
                   responsive={isSm ? "col-4" : isMd ? "col-4 col-md-3" : isXl ? "col-4 col-md-3 col-xl-2" : "kebab"}
-                  poster={movie.Poster}
+                  poster={movie}
                 />
               ))}
             </Row>

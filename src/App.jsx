@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import Settings from "./components/Settings";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MovieDetail from "./components/MovieDetail";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         />
         <Route path="/profile" element={<Profile />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/moviedetail/:id" element={<MovieDetail />} />
       </Routes>
     </BrowserRouter>
   );
