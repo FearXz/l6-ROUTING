@@ -6,7 +6,7 @@ function AddComment(props) {
   const [comment, setComment] = useState({
     comment: "",
     rate: "",
-    elementId: props.bookObj.asin,
+    elementId: props.movie.imdbID,
   });
 
   function handleInput(event) {
@@ -81,7 +81,7 @@ function AddComment(props) {
               </Form.Select>
             </Col>
             <Col xs={12}>
-              <Button className="mb-3" type="submit">
+              <Button variant="danger" className="mb-3" type="submit">
                 Submit form
               </Button>
               {isLoading && <Spinner />}

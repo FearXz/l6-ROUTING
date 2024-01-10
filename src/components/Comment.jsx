@@ -4,6 +4,10 @@ import { Button, ListGroupItem } from "react-bootstrap";
 function Comment(props) {
   console.log(props.comment.comment);
 
+  // const handleDelete = () => {
+  //   props.handleDeleteComment(props.comment._id);
+  // };
+
   return (
     <ListGroupItem>
       <div className=" d-flex ">

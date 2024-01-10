@@ -2,17 +2,22 @@ import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Image, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Loading from "./Loading";
+import AddComment from "./AddComment";
+import CommentArea from "./CommentArea";
 
 function MovieDetail() {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [movie, setMovie] = useState(null);
-
+  const [commentUpdate, setCommentUpdate] = useState(false);
   const params = useParams();
 
   useEffect(() => {
     fetchMovie(params.id);
   }, [params]);
+  useEffect(() => {
+    console.log("CommentAreaComp aggiornata!");
+  }, [commentUpdate]);
 
   async function fetchMovie(imdbID) {
     try {
@@ -31,6 +36,10 @@ function MovieDetail() {
     } finally {
       setIsLoading(false);
     }
+  }
+
+  function handleUpdate() {
+    setCommentUpdate((prev) => !prev);
   }
 
   return (
@@ -78,6 +87,12 @@ function MovieDetail() {
                   </Col>
                 </Row>
               </Container>
+            </Col>
+          </Row>
+          <Row className=" justify-content-center min-vh-100">
+            <Col xs={12}>
+              <AddComment movie={movie} callbackUpdate={handleUpdate} />
+              <CommentArea movie={movie} update={commentUpdate} />
             </Col>
           </Row>
         </Container>

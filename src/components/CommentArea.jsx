@@ -15,9 +15,9 @@ function CommentArea(props) {
     }, 2500);
   }
 
-  async function fetchAllComment(bookObj) {
+  async function fetchAllComment(movie) {
     try {
-      const response = await fetch("https://striveschool-api.herokuapp.com/api/comments/" + bookObj.asin, {
+      const response = await fetch("https://striveschool-api.herokuapp.com/api/comments/" + movie.imdbID, {
         headers: {
           Authorization:
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0NTMwZWI1MjViYjAwMThlZDA4NWQiLCJpYXQiOjE3MDQ3MjM0MjUsImV4cCI6MTcwNTkzMzAyNX0.Hu_OirLz5GCraWSzSmR2dYEgx8UHmfuHMTX3YwMgjlQ",
@@ -52,7 +52,7 @@ function CommentArea(props) {
       if (response.ok) {
         console.log(`Commento con ID ${commentId} cancellato con successo.`);
 
-        fetchAllComment(props.bookObj);
+        fetchAllComment(props.movie);
       } else {
         timerError();
         console.error(`Errore durante la cancellazione del commento: ${response.status} ${response.statusText}`);
@@ -65,11 +65,11 @@ function CommentArea(props) {
   }
   useEffect(() => {
     console.log("sono come un  componentDidMount");
-    fetchAllComment(props.bookObj);
+    fetchAllComment(props.movie);
   }, []);
 
   useEffect(() => {
-    fetchAllComment(props.bookObj);
+    fetchAllComment(props.movie);
   }, [props.update]);
 
   return (
@@ -78,7 +78,7 @@ function CommentArea(props) {
       {hasError && <Error color="danger" error="Errore durante il caricamento dei commenti" />}
       <ListGroup>
         {arrayOfComment.map((comment) => (
-          <CommentComp key={comment._id} comment={comment} handleDeleteComment={handleDeleteComment} />
+          <Comment key={comment._id} comment={comment} handleDeleteComment={handleDeleteComment} />
         ))}
       </ListGroup>
     </>
