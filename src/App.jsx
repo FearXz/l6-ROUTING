@@ -3,18 +3,11 @@ import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import { useState } from "react";
 import Profile from "./components/Profile";
 import Settings from "./components/Settings";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// L'APP È NAVIGABILE TRAMITE IL LOGO CHE PORTA ALLA MAIN ED IL SPLITBUTTON NELLA NAVBAR PER PROFILE E SETTINGS
+
 function App() {
-  const [actualPage, setActualPage] = useState("main");
-
-  function handlePage(page) {
-    setActualPage(page);
-  }
-
   return (
     <BrowserRouter>
       <Routes>
@@ -22,7 +15,7 @@ function App() {
           path="/"
           element={
             <div className="bg-darkgray">
-              <Header callbackDetailPage={handlePage} />
+              <Header />
               <Main />
               <Footer />
             </div>
