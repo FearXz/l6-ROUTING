@@ -82,7 +82,13 @@ function MovieDetail() {
           </Row>
         </Container>
       ) : (
-        <Loading />
+        <Container>
+          <Row>
+            <Col className=" d-flex justify-content-center">
+              <Loading />
+            </Col>
+          </Row>
+        </Container>
       )}
     </>
   );
