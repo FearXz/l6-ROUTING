@@ -24,7 +24,16 @@ function App() {
         />
         <Route path="/profile" element={<Profile />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="/moviedetail/:id" element={<MovieDetail />} />
+        <Route
+          path="/moviedetail/:id"
+          element={
+            <div className="bg-darkgray">
+              <Header />
+              <MovieDetail />
+              <Footer />
+            </div>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
