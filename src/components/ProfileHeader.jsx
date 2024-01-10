@@ -1,14 +1,15 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import netflix_logo from "../assets/netflix_logo.png";
+import { Link } from "react-router-dom";
 
 function ProfileHeader(props) {
   return (
     <header className="mb-5">
       <Container fluid className="bg-custom1">
-        <a href="#" onClick={() => props.callbackDetailPage("main")}>
+        <Link to={"/"}>
           <img className="logo-profile" src={netflix_logo} alt="" />
-        </a>
+        </Link>
       </Container>
     </header>
   );

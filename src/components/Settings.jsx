@@ -5,7 +5,7 @@ import SettingsMain from "./SettingsMain";
 function Settings(props) {
   return (
     <div className="bg-settings">
-      <SettingsNavbar callbackDetailPage={props.callbackDetailPage} />
+      <SettingsNavbar />
       <SettingsMain />
     </div>
   );

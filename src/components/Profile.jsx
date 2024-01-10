@@ -5,7 +5,7 @@ function Profile(props) {
   return (
     <>
       <div className="bg-darkgray" data-bs-theme="dark">
-        <ProfileHeader callbackDetailPage={props.callbackDetailPage} />
+        <ProfileHeader />
         <ProfileMain />
       </div>
     </>

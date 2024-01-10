@@ -28,24 +28,11 @@ function App() {
             </div>
           }
         />
-        <Route path="/profile" element={<Profile callbackDetailPage={handlePage} />} />
-        <Route path="/settings" element={<Settings callbackDetailPage={handlePage} />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
   );
-  {
-    /* <>
-      {actualPage == "main" && (
-        <div className="bg-darkgray">
-          <Header callbackDetailPage={handlePage} />
-          <Main />
-          <Footer />
-        </div>
-      )}
-      {actualPage == "profile" && <Profile callbackDetailPage={handlePage} />}
-      {actualPage == "settings" && <Settings callbackDetailPage={handlePage} />}
-    </> */
-  }
 }
 
 export default App;
