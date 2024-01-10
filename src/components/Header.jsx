@@ -8,7 +8,7 @@ function Header(props) {
       <Container className=" mb-5">
         <Row>
           <Col xs={12}>
-            <MyNavbar callbackDetailPage={props.callbackDetailPage} />
+            <MyNavbar />
           </Col>
         </Row>
       </Container>

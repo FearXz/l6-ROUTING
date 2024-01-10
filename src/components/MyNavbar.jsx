@@ -1,21 +1,20 @@
 import React from "react";
 import { Navbar, Container, Nav, Button, Image, Dropdown } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 function MyNavbar(props) {
-  function handlePage(page) {
-    props.callbackDetailPage(page);
-  }
-
   return (
     <Navbar bg="transparent" expand="lg" variant="dark">
       <Container>
-        <Navbar.Brand className="text-white" href="#" onClick={() => handlePage("main")}>
+        <Navbar.Brand className="text-white " as={NavLink} to="/">
           <Image src="netflix_logo.png" alt="logo" className="logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarSupportedContent" />
         <Navbar.Collapse id="navbarSupportedContent">
           <Nav className="me-auto">
-            <Nav.Link /* href="#" */ onClick={() => handlePage("main")}>Home</Nav.Link>
+            <NavLink className="nav-link" to={"/"}>
+              Home
+            </NavLink>
             <Nav.Link href="#" active>
               TV Shows
             </Nav.Link>
@@ -34,10 +33,10 @@ function MyNavbar(props) {
               </Button>
               <Dropdown.Toggle split variant="darkgray" id="dropdown-split-basic" />
               <Dropdown.Menu>
-                <Dropdown.Item href="#" onClick={() => handlePage("profile")}>
+                <Dropdown.Item as={NavLink} to="/profile">
                   Profile
                 </Dropdown.Item>
-                <Dropdown.Item href="#" onClick={() => handlePage("settings")}>
+                <Dropdown.Item as={NavLink} to="/settings">
                   Settings
                 </Dropdown.Item>
               </Dropdown.Menu>
