@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Image, Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Loading from "./Loading";
 import AddComment from "./AddComment";
 import CommentArea from "./CommentArea";
@@ -11,6 +11,7 @@ function MovieDetail() {
   const [movie, setMovie] = useState(null);
   const [commentUpdate, setCommentUpdate] = useState(false);
   const params = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchMovie(params.id);
@@ -25,6 +26,10 @@ function MovieDetail() {
 
       if (response.ok) {
         const movieFetched = await response.json();
+
+        if (movieFetched.Error) {
+          navigate("/");
+        }
         console.log(movieFetched);
         setMovie(movieFetched);
       } else {
